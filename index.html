@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=1110">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <title>SURFBOARD</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -13,11 +15,11 @@
     <div class="wrapper">
         <div class="maincontent">
 
-            <section class="section hero section--overlay">
+            <section data-sidemenu-theme="white" data-section-id="hero" class="section hero section--overlay">
                 <div class="container hero__container">
                     <header class="header">            
-                        <img src="./img/logo.png" alt="surfboard logo" class="">
-                        <nav class="menu">
+                        <img src="./img/logo.png" alt="surfboard logo" class="logo" />
+                        <nav class="menu">                          
                             <ul class="menu__list">
                                 <li class="menu__item"> <a href="#" class="menu__link">О нас</a></li>
                                 <li class="menu__item"> <a href="#" class="menu__link">Серфборды</a></li>
@@ -28,43 +30,58 @@
                                 <li class="menu__item"> <a href="#" class="menu__link">Контакты </a></li>
                             </ul>                                                        
                         </nav>     
-                        <a href="tel:+78009039090" class="phone-number">
-                            <span class="phone-number__icon">
-                                <img src="./img/phone.png" alt="phone icone" class="phone-number__icon-elem">
-                            </span>
+                        <a href="tel:+78009039090" class="phone-number header__phone-number">
+                            <svg class="phone-number__icon">
+                                <use xlink:href="./img/sprite.svg#phone"></use>
+                            </svg> 
                             <span class="phone-number__text">8 800 903 90 90</span>
-                        </a>                              
+                        </a>     
+                        <a href="#" class="hamburger">
+                            <span class="hamburger__plank"></span>
+                            <span class="hamburger__plank"></span>
+                            <span class="hamburger__plank"></span>
+                        </a>  
+                        <a href="#" class="menu__close">
+                          <svg class="menu__close-icon"><use xlink:href="./img/sprite.svg#cross"></use></svg>
+                        </a>                       
                     </header>
                     <div class="hero__title-section">
                         <h1 class="hero__main-title">Профессиональные доски для серфинга</h1>
                         <div class="hero__title-desc">Самый большой выбор серфбордов в мире</div>
-                        <a href="#" class="btn btn--theme--yellow">ЗАКАЗАТЬ</a>
+                        <a href="#" data-scroll-to="order" class="btn btn--theme--yellow">ЗАКАЗАТЬ</a>
                     </div>
                     <div class="hero__icons-section">
                         <ul class="features">
                             <li class="features__item feature">
-                                <div class="feature__icon">
-                                   <img src="./img/design.png" alt="surfboard icon"> 
+                                <div class="feature__icon">                                    
+                                    <svg class="feature__icon-symbol">
+                                        <use xlink:href="./img/sprite.svg#design"></use>
+                                    </svg>                                    
                                 </div>
                                 <div class="feature__text">Уникальный<br> дизайн</div>
                             </li>
                             <li class="features__item feature">
                                 <div class="feature__icon">
-                                   <img src="./img/materials.png" alt="tools icon"> 
+                                    <svg class="feature__icon-symbol">
+                                        <use xlink:href="./img/sprite.svg#materials"></use>
+                                    </svg>                                    
                                 </div>
                                 <div class="feature__text">Прочные<br> материалы</div>
                             </li>
                             <li class="features__item feature">
                                 <div class="feature__icon">
-                                   <img src="./img/delivery.png" alt="truck icon"> 
+                                    <svg class="feature__icon">
+                                        <use xlink:href="./img/sprite.svg#delivery"></use>
+                                    </svg>                                    
                                 </div>
                                 <div class="feature__text">Быстрая<br> доставка</div>
                             </li>
                         </ul>
                     </div>
                 </div>               
-            </section>           
-            <section class="section benefits-section">
+            </section>   
+
+            <section data-sidemenu-theme="black"  data-section-id="benefits" class="section benefits-section">
                 <div class="container">
                     <div class="headline">
                         <h2 class="section__title headline__title">Почему Surfboard?</h2>
@@ -74,7 +91,9 @@
                         <li class="benefits__item benefit">
                             <div class="benefit__image">
                                 <div class="benefit__image-wrapper">
-                                    <img src="./img/fit.png" alt="Perfect Fit" class="benefit__icon">
+                                    <svg class="benefit__icon">
+                                        <use xlink:href="./img/sprite.svg#fit"></use>
+                                    </svg>                                    
                                 </div>
                             </div>
                             <div class="benefit__text">
@@ -89,7 +108,9 @@
                         <li class="benefits__item benefit">
                             <div class="benefit__image">
                                 <div class="benefit__image-wrapper">
-                                    <img src="./img/strong.png" alt="Strong" class="benefit__icon">
+                                    <svg class="benefit__icon">
+                                        <use xlink:href="./img/sprite.svg#strong"></use>
+                                    </svg>                                    
                                 </div>
                             </div>
                             <div class="benefit__text">
@@ -104,7 +125,9 @@
                         <li class="benefits__item benefit">
                             <div class="benefit__image">
                                 <div class="benefit__image-wrapper">
-                                    <img src="./img/unique.png" alt="Unique" class="benefit__icon">
+                                    <svg class="benefit__icon">
+                                        <use xlink:href="./img/sprite.svg#unique"></use>
+                                    </svg>                                      
                                 </div>
                             </div>
                             <div class="benefit__text">
@@ -119,75 +142,533 @@
                     </ul>     
                 </div>
             </section>
-            <section class="section reviews-section">
-                <div class="container">
-                    <h2 class="section__title">Отзывы</h2>
-                    <div class="reviews">
-                        <div class="reviews__display">
-                            <div class="reviews__display-inner">
-                                <div class="reviews__avatar">
-                                    <img src="./img/makarova.png" alt="" class="reviews__avatar-img">
-                                </div>
-                                <article class="reviews__content">
-                                    <h3 class="reviews__title">Лучший дизайн</h3>
-                                    <div class="reviews__text">
-                                        <p>
-                                            Я увидела доски на сайте и влюбилась в их дизайн. К летнему сезону я заказала себе доску в SurfBoard. Дизайнер команды - волшебница! Она учла все мои предпочтения и комментарии. В итоге получился прекрасный дизайн. А я катаюсь на доске, которая мне нравится)
-                                        </p>
-                                    </div>
-                                    <div class="reviews__author">Ольга Макарова</div>
-                                </article>
-                            </div>
-                        </div>
-                        <ul class="reviews__switcher">
-                            <li class="reviews__switcher-item interactive-avatar interactive-avatar--active">
-                                <a href="#" class="interactive-avatar__link">
-                                    <img src="./img/makarova.png" alt="black hair girl" class="interactive-avatar__img">
-                                </a>
-                            </li>
-                            <li class="reviews__switcher-item interactive-avatar">
-                                <a href="#" class="interactive-avatar_link">
-                                    <img src="./img/brulov.png" alt="black cup boy" class="interactive-avatar__img">
-                                </a>
-                            </li>
-                            <li class="reviews__switcher-item interactive-avatar">
-                                <a href="#" class="interactive-avatar_link">
-                                    <img src="./img/poperechnyi.png" alt="black hair boy" class="interactive-avatar__img">
-                                </a>
-                            </li>
-                        </ul>
+
+            <section data-sidemenu-theme="black"  data-section-id="products" class="section products-section">
+                <div class="container ">
+                  <div class="products-slider">
+                    <div class="product-slider__arrows">
+                      <a href="#" class="product-slider__arrow product-slider__arrow--direction--prev"></a>
+                      <a href="#" class="product-slider__arrow product-slider__arrow--direction--next"></a>
                     </div>
-                </div>                
-            </section>
-            <section class="section order-section section--font-color--white section--overlay">
+                    <ul class="products">
+                      <li class="products__item product">
+                        <div class="product__container">
+                          <div class="product__col">
+                            <div class="product__image">
+                              <img src="./img/longboard.png" class="product__image-elem" alt="лонгборд"/>
+                            </div>
+                          </div>
+                          <div class="product__col">
+                            <div class="product__parameters">
+                              <div class="parameters">
+                                <div class="parameters__button">
+                                  <div class="parameters__button-icon">
+                                    <svg class="parameters__button-icon-elem">
+                                      <use xlink:href="./img/sprite.svg#parameters"></use>
+                                    </svg>
+                                  </div>
+                                  <div class="parameters__button-text">параметры</div>
+                                </div>
+                                <div class="parameters__dropdown">
+                                  <table class="parameters__table">
+                                    <tr class="parameters__table-row">
+                                      <td class="parameters__table-cell parameters__icon-container">
+                                        <img src="./img/length.svg" class="parameters__icon"/>
+                                      </td>
+                                      <td class="parameters__table-cell parameters__text-container">
+                                        <span class="parameters__text">Длина доски</span>
+                                      </td>
+                                      <td class="parameters__table-cell">
+                                        <span class="parameters__text">от 2,5 м</span>
+                                      </td>
+                                    </tr>
+                                    <tr class="parameters__table-row">
+                                      <td class="parameters__table-cell parameters__icon-container">
+                                        <img src="./img/width.svg" class="parameters__icon"/>
+                                      </td>
+                                      <td class="parameters_table-cell parameters__text-container">
+                                        <span class="parameters__text">Ширина доски</span>
+                                      </td>
+                                      <td class="parameters__table-cell">
+                                        <span class="parameters__text">от 40 см</span>
+                                      </td>
+                                    </tr>
+                                    <tr class="parameters__table-row">
+                                      <td class="parameters__table-cell parameters__icon-container">
+                                        <img src="./img/thickness.svg" class="parameters__icon"/>
+                                      </td>
+                                      <td class="parameters__table-cell parameters__text-container">
+                                        <span class="parameters__text">Толщина</span>
+                                      </td>
+                                      <td class="parameters__table-cell">
+                                        <span class="parameters__text">8 см</span>
+                                      </td>
+                                    </tr>
+                                    <tr class="parameters__table-row">
+                                      <td class="parameters__table-cell parameters__icon-container">
+                                        <img src="./img/time.svg" class="parameters__icon"/>
+                                      </td>
+                                      <td class="parameters__table-cell parameters__text-container">
+                                        <span class="parameters__text">Срок службы</span>
+                                      </td>
+                                      <td class="parameters__table-cell">
+                                        <span class="parameters__text">5 лет</span>
+                                      </td>
+                                    </tr>
+                                    <tr class="parameters__table-row">
+                                      <td class="parameters__table-cell parameters__icon-container">
+                                        <img src="./img/weight.svg" class="parameters__icon"/>
+                                      </td>
+                                      <td class="parameters__table-cell parameters__text-container">
+                                        <span class="parameters__text">Вес</span>
+                                      </td>
+                                      <td class="parameters__table-cell">
+                                        <span class="parameters__text">7-8 кг</span>
+                                      </td>
+                                    </tr>                          
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="product__title">
+                                Лонгборд 2.0
+                            </div>
+                            <div class="product__text">
+                              <p>
+                                Устойчивая доска для новичков. На них легко лежать, сидеть, грести, разгребаться на волны и ехать. Размер и плавучесть доски позволяет брать очень маленькие и пологие волны и не спеша, не прилагая особых усилий ехать по ним.
+                              </p>
+                            </div>
+                            <table class="product__values">
+                              <tr class="product__values-row">
+                                <td class="product__values-block">
+                                  <div class="product__values-title">Длина доски</div>
+                                  <div class="product__values-amount">от 2,5 метров</div>
+                                </td>
+                                <td class="product__values-block">
+                                  <div class="product__values-title">Ширина доски</div>
+                                  <div class="product__values-amount">от 40 сантиметров</div>
+                                </td>
+                              </tr>
+                              <tr class="product__values-row">
+                                <td class="product__values-block">
+                                  <div class="product__values-rub">7000 ₽</div>
+                                </td>
+                                <td class="product__values-block">
+                                  <a class="btn btn--theme--yellow">Заказать</a>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="products__item product">
+                        <div class="product__container">
+                          <div class="product__col">
+                            <div class="product__image">
+                              <img src="./img/shortboard.png" class="product__image-elem" alt="шортборд"/>
+                            </div>
+                          </div>
+                          <div class="product__col">
+                            <div class="product__parameters">
+                              <div class="parameters">
+                                <div class="parameters__button">
+                                  <div class="parameters__button-icon">
+                                    <svg class="parameters__button-icon-elem">
+                                        <use xlink:href="./img/sprite.svg#parameters"></use>
+                                    </svg>
+                                  </div>
+                                  <div class="parameters__button-text">параметры</div>
+                                </div>
+                                <div class="parameters__dropdown">
+                                  <table class="parameters__table">
+                                    <tr class="parameters__table-row">
+                                      <td class="parameters__table-cell parameters__icon-container">
+                                        <img src="./img/length.svg" class="parameters__icon"/>
+                                      </td>
+                                      <td class="parameters__table-cell parameters__text-container">
+                                        <span class="parameters__text">Длина доски</span>
+                                      </td>
+                                      <td class="parameters__table-cell">
+                                        <span class="parameters__text">от 1,5 м</span>
+                                      </td>
+                                    </tr>
+                                    <tr class="parameters__table-row">
+                                      <td class="parameters__table-cell parameters__icon-container">
+                                        <img src="./img/width.svg" class="parameters__icon"/>
+                                      </td>
+                                      <td class="parameters_table-cell parameters__text-container">
+                                        <span class="parameters__text">Ширина доски</span>
+                                      </td>
+                                      <td class="parameters__table-cell">
+                                        <span class="parameters__text">от 30 см</span>
+                                      </td>
+                                    </tr>
+                                    <tr class="parameters__table-row">
+                                      <td class="parameters__table-cell parameters__icon-container">
+                                        <img src="./img/thickness.svg" class="parameters__icon"/>
+                                      </td>
+                                      <td class="parameters__table-cell parameters__text-container">
+                                        <span class="parameters__text">Толщина</span>
+                                      </td>
+                                      <td class="parameters__table-cell">
+                                        <span class="parameters__text">8 см</span>
+                                      </td>
+                                    </tr>
+                                    <tr class="parameters__table-row">
+                                      <td class="parameters__table-cell parameters__icon-container">
+                                        <img src="./img/time.svg" class="parameters__icon"/>
+                                      </td>
+                                      <td class="parameters__table-cell parameters__text-container">
+                                        <span class="parameters__text">Срок службы</span>
+                                      </td>
+                                      <td class="parameters__table-cell">
+                                        <span class="parameters__text">5 лет</span>
+                                      </td>
+                                    </tr>
+                                    <tr class="parameters__table-row">
+                                      <td class="parameters__table-cell parameters__icon-container">
+                                        <img src="./img/weight.svg" class="parameters__icon"/>
+                                      </td>
+                                      <td class="parameters__table-cell parameters__text-container">
+                                        <span class="parameters__text">Вес</span>
+                                      </td>
+                                      <td class="parameters__table-cell">
+                                        <span class="parameters__text">7-8 кг</span>
+                                      </td>
+                                    </tr>                          
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="product__title">Шортборд</div>
+                            <div class="product__text">
+                              <p>
+                                Самые быстрые доски для профессионалов. Размеры шортбордов позволяют быстро набирать скорость, делать различные трюки на волне, включая резкие повороты и развороты, флоатеры (проезды по самому гребню волны), различные прыжки с вращениями или без, а также катание в трубах.
+                              </p>
+                            </div>
+                            <table class="product__values">
+                              <tr class="product__values-row">
+                                <td class="product__values-block">
+                                  <div class="product__values-title">Длина доски</div>
+                                  <div class="product__values-amount">от 1,5 метров</div>
+                                </td>
+                                <td class="product__values-block">
+                                  <div class="product__values-title">Ширина доски</div>
+                                  <div class="product__values-amount">от 30 сантиметров</div>
+                                </td>
+                              </tr>
+                              <tr class="product__values-row">
+                                <td class="product__values-block">
+                                  <div class="product__values-rub">12000 ₽</div>
+                                </td>
+                                <td class="product__values-block">
+                                  <a class="btn btn--theme--yellow">Заказать</a>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                      </li>                      
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section data-sidemenu-theme="black" data-section-id="team" class="section team-section">
                 <div class="container">
-                    <h2 class="section__title">закажите доску</h2>
+                  <div class="section__title">Команда</div>
+                  <ul class="team team--version--desktop">
+                    <li class="team__item">
+                      <div class="team__member">
+                        <img class="team__member-pic" src="./img/boris.jpg" alt="team member"/>
+                        </div>
+                      <button class="team__title" type="button">Борис Федорович</button>
+                      <div class="team__content">
+                        <div class="team__content-block">
+                          <div class="team__occ">Главный технолог</div>
+                          <div class="team__content-text">Отвечает за материалы и разработку досок</div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="team__item">
+                      <div class="team__member">
+                        <img class="team__member-pic" src="./img/olga.jpg" alt="team member"/>
+                        </div>
+                      <button class="team__title" type="button">Ольга Невзорова</button>
+                      <div class="team__content">
+                        <div class="team__content-block">
+                          <div class="team__occ">Дизайнер</div>
+                          <div class="team__content-text">Создает дизайн серфбордов</div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="team__item">
+                      <div class="team__member">
+                        <img class="team__member-pic" src="./img/ingvar.jpg" alt="team member"/>
+                        </div>
+                      <button class="team__title" type="button">Ингвар Нильсон</button>
+                      <div class="team__content">
+                        <div class="team__content-block">
+                          <div class="team__occ">Спортсмен</div>
+                          <div class="team__content-text">Участвует в разработке серфбордов</div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="team__item">
+                      <div class="team__member">
+                        <img class="team__member-pic" src="./img/ekaterina.jpg" alt="team member"/>
+                        </div>
+                      <button class="team__title" type="button">Екатерина Иванова</button>
+                      <div class="team__content">
+                        <div class="team__content-block">
+                          <div class="team__occ">Тестировщик</div>
+                          <div class="team__content-text">Отвечает за разработку новых продуктов</div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+        
+                  <!-- for mobile -->                  
+                  <ul class="team team--version--mobile">
+                    <li class="team__item">
+                      <button class="team__title" type="button">Борис Федорович</button>
+                      <div class="team__content">
+                        <div class="team__content-block">
+                          <div class="team__member">
+                            <img class="team__member-pic" src="./img/boris.jpg" alt="team member"/>
+                            </div>
+                          <div class="team__occ">Главный технолог</div>
+                          <div class="team__content-text">Отвечает за материалы и разработку досок</div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="team__item">
+                      <button class="team__title" type="button">Ольга Невзорова</button>
+                      <div class="team__content">
+                        <div class="team__content-block">
+                          <div class="team__member">
+                            <img class="team__member-pic" src="./img/olga.jpg" alt="team member"/>
+                            </div>
+                          <div class="team__occ">Дизайнер</div>
+                          <div class="team__content-text">Создает дизайн серфбордов</div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="team__item">
+                      <button class="team__title" type="button">Ингвар Нильсон</button>
+                      <div class="team__content">
+                        <div class="team__content-block">
+                          <div class="team__member">
+                            <img class="team__member-pic" src="./img/ingvar.jpg" alt="team member"/>
+                            </div>
+                          <div class="team__occ">Спортсмен</div>
+                          <div class="team__content-text">Участвует в разработке серфбордов</div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="team__item">
+                      <button class="team__title" type="button">Екатерина Иванова</button>
+                      <div class="team__content">
+                        <div class="team__content-block">
+                          <div class="team__member">
+                            <img class="team__member-pic" src="./img/ekaterina.jpg" alt="team member"/>
+                            </div>
+                          <div class="team__occ">Тестировщик</div>
+                          <div class="team__content-text">Отвечает за разработку новых продуктов</div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>        
+
+              <section data-sidemenu-theme="white" data-section-id="products" class="section products-menu-section">
+                <h1 class="section__title products-menu-section__title">Меню</h1>
+                <ul class="products-menu">
+                  <li class="products-menu__item">
+                    <a class="products-menu__title" href="">
+                      <img class="products-menu__image" src="./img/long.jpg" />
+                      <div class="products-menu__text">Лонгборды</div></a
+                    >
+                    <div class="products-menu__content">
+                      <div class="products-menu__container">
+                        <button class="products-menu__close" type="button">
+                          <svg class="products-menu__close-icon">
+                            <use xlink:href="./img/sprite.svg#cross"></use>
+                          </svg>
+                        </button>
+                        <div class="products-menu__content-text">
+                          Устойчивая доска для новичков. На них легко лежать, сидеть, грести, разгребаться на волны и ехать. Размер и плавучесть доски позволяет брать очень маленькие и пологие волны и не спеша, не прилагая особых усилий ехать по ним.
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="products-menu__item">
+                    <a class="products-menu__title" href="">
+                      <img class="products-menu__image" src="./img/short.jpg"/>
+                      <div class="products-menu__text">Шортбоды</div></a>
+                    <div class="products-menu__content">
+                      <div class="products-menu__container">
+                        <button class="products-menu__close" type="button">
+                          <svg class="products-menu__close-icon">
+                            <use xlink:href="./img/sprite.svg#cross"></use>
+                          </svg>
+                        </button>
+                        <div class="products-menu__content-text">
+                          Устойчивая доска для новичков. На них легко лежать, сидеть, грести, разгребаться на волны и ехать. Размер и плавучесть доски позволяет брать очень маленькие и пологие волны и не спеша, не прилагая особых усилий ехать по ним.
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="products-menu__item">
+                    <a class="products-menu__title" href="">
+                      <img class="products-menu__image" src="./img/soft.jpg" />
+                      <div class="products-menu__text">Софттопы</div></a>
+                    <div class="products-menu__content">
+                      <div class="products-menu__container">
+                        <button class="products-menu__close" type="button">
+                          <svg class="products-menu__close-icon">
+                            <use xlink:href="./img/sprite.svg#cross"></use>
+                          </svg>
+                        </button>
+                        <div class="products-menu__content-text">
+                          Устойчивая доска для новичков. На них легко лежать, сидеть, грести, разгребаться на волны и ехать. Размер и плавучесть доски позволяет брать очень маленькие и пологие волны и не спеша, не прилагая особых усилий ехать по ним.
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </section>
+
+              <section data-sidemenu-theme="black" data-section-id="reviews" class="section reviews-section">
+                <div class="container">
+                  <div class="section__title">Отзывы</div>
+                  <div class="reviews__display">
+                    <ul class="reviews__list">
+                      <li class="reviews__item active" data-linked-with="one">
+                        <div class="reviews__display-inner">
+                          <div class="reviews__avatar">
+                            <img src="./img/makarova.png" alt="" class="reviews__avatar-img">
+                          </div>
+                          <div class="reviews__content">
+                            <div class="reviews__title">Лучший дизайн</div>
+                            <div class="reviews__text">
+                                <p>
+                                    Я увидела доски на сайте и влюбилась в их дизайн. К летнему сезону я заказала себе доску в SurfBoard. Дизайнер команды - волшебница! Она учла все мои предпочтения и комментарии. В итоге получился прекрасный дизайн. А я катаюсь на доске, которая мне нравится)
+                                </p>
+                            </div>
+                            <div class="reviews__author">Ольга Макарова</div>
+                        </div>                        
+                        </div>
+                      </li>
+                      <li class="reviews__item" data-linked-with="two">
+                        <div class="reviews__display-inner">
+                          <div class="reviews__avatar">
+                            <img src="./img/brulov.png" alt="" class="reviews__avatar-img">
+                          </div>
+                          <div class="reviews__content">
+                            <div class="reviews__title">Нереальная скорость</div>
+                            <div class="reviews__text">
+                              <p>
+                                Я занимаюсь профессиональным спортом. Доверил изготовление доски для соревнований ребятам из Surfboard и не пожалел: 1 место на соревнованиях. Нереальная скорость, устойчивая, удобная и легкая: всё что нужно для победы на соревнованиях!                                          
+                              </p>
+                            </div>
+                            <div class="reviews__author">Марк Брюлов</div>
+                        </div>                        
+                        </div>
+                      </li>
+                      <li class="reviews__item" data-linked-with="three">
+                        <div class="reviews__display-inner">
+                          <div class="reviews__avatar">
+                            <img src="./img/poperechnyi.png" alt="" class="reviews__avatar-img">
+                          </div>
+                          <div class="reviews__content">
+                            <div class="reviews__title">Устойчивость и безопасность</div>
+                            <div class="reviews__text">
+                              <p>
+                                Я заказывал доски для своих детей. Мне было важно, чтобы они были устойчивые, так как безопасность детей на первом месте. Доски были изготовлены по индивидуальным замерам с учетом роста и веса каждого ребенка. Теперь дети катаются и им нравится!
+                              </p>
+                            </div>
+                            <div class="reviews__author">Василий Поперечный</div>
+                        </div>                        
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <ul class="reviews-switcher">
+                    <li class="reviews-switcher__item active">
+                      <a href="#" class="reviews-switcher__link" data-open="one">
+                        <img src="./img/makarova.png" alt="" class="reviews-switcher__pic">
+                      </a>
+                    </li>
+                    <li class="reviews-switcher__item">
+                      <a href="#" class="reviews-switcher__link" data-open="two">
+                        <img src="./img/brulov.png" alt="" class="reviews-switcher__pic">
+                      </a>
+                    </li>
+                    <li class="reviews-switcher__item">
+                      <a href="#" class="reviews-switcher__link" data-open="three">
+                        <img src="./img/poperechnyi.png" alt="" class="reviews-switcher__pic">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+          
+              <section data-sidemenu-theme="black" data-section-id="player" class="section player-section">
+                <div class="container">
+                  <h2 class="section__title">Как мы работаем</h2>
+                  <div class="player-section__container">
+                    <div class="player">
+                      <div class="player__wrapper">
+                        <div id="yt-player" class="player__elem"></div>
+                        <div class="player__splash"></div>
+                      </div>
+                      <div class="player__controls">
+                        <button class="player__start"></button>
+                        <div class="player__playback">
+                          <button class="player__playback-button"></button>
+                        </div>
+                        <div class="player__duration">
+                          <span class="player__duration-completed">0:00</span> :
+                          <span class="player__duration-estimate">0:00</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+            <section data-sidemenu-theme="white" data-section-id="order" class="section order-section section--font-color--white section--overlay">
+                <div class="container">
+                    <h2 class="section__title container__title">закажите доску</h2>
                     <form class="form">
+                      <input type="hidden" name="to" value="somewere@mail.com">
                         <div class="form__col">
                             <div class="form__row">
                                 <label class="form__block">
                                     <div class="form__title">Имя</div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" name="name" class="form__input"/>
                                 </label>
                                 <label class="form__block">
                                     <div class="form__title">Телефон</div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" name="phone" class="form__input"/>
                                 </label>
                             </div>
                                 <div class="form__row">
                                     <label class="form__block">
                                         <div class="form__title">Улица</div>
-                                        <input type="text" class="form__input">
+                                        <input type="text" name="street" class="form__input"/>
                                     </label>
                                 </div>
                                 <div class="form__row">
                                     <label class="form__block">
                                         <div class="form__title">Дом</div>
-                                        <input type="text" class="form__input">
+                                        <input type="text" name="home" class="form__input"/>
                                     </label>
                                     <label class="form__block">
                                         <div class="form__title">Корпус</div>
-                                        <input type="text" class="form__input">
+                                        <input type="text" name="part" class="form__input"/>
                                     </label>
                                     <label class="form__block">
                                         <div class="form__title">Квартира</div>
@@ -195,7 +676,7 @@
                                     </label>
                                     <label class="form__block">
                                         <div class="form__title">Этаж</div>
-                                        <input type="text" class="form__input">
+                                        <input type="text" name="floor" class="form__input"/>
                                     </label>
                                 </div>                            
                         </div>
@@ -203,51 +684,121 @@
                             <div class="form__row">
                                 <label class="form__block">
                                     <div class="form__title">Комментарий</div>
-                                    <textarea class="form__input form__input--textarea"></textarea>                                    
+                                    <textarea name="comment" class="form__input form__input--textarea"></textarea>                                    
                                 </label>                                
                             </div>
                             <div class="form__controls">
                                 <label class="radio">
-                                    <input type="radio" name="option" class="radio__elem">
+                                    <input type="radio" name="option" class="radio__elem"/>
                                     <div class="radio__visible"></div>
                                     <div class="radio__title">Оплата наличными</div>
                                 </label>                               
                                 <label class="radio">
-                                    <input type="radio" name="option" class="radio__elem">
+                                    <input type="radio" name="option" class="radio__elem"/>
                                     <div class="radio__visible"></div>
                                     <div class="radio__title">Оплата картой</div>
                                 </label>
                             </div>
                             <div class="form__controls">
                                 <label class="radio radio--checkbox">
-                                     <input type="checkbox" class="radio__elem">
+                                     <input type="checkbox" class="radio__elem"/>
                                      <div class="radio__visible"></div>
                                      <div class="radio__title">Не перезванивать</div>
                                 </label>
                             </div>
                             <div class="form__btns">
-                                <input type="submit" value="Заказать" class="btn btn--theme--yellow">
-                                <input type="reset" value="Очистить" class="btn btn--theme--transparent">
+                                <input type="submit" value="Заказать" class="btn btn--theme--yellow"/>
+                                <input type="reset" value="Очистить" class="btn btn--theme--transparent"/>
                             </div>
                          </div>                        
                     </form>
                 </div>
-            </section>                         
+            </section>      
+            
+            <section data-sidemenu-theme="black" data-section-id="contacts" class="section map-section">
+              <div id="map"></div>
+              <footer class="footer">
+                <div class="container footer__container">
+                  <address class="contacts">
+                    <div class="contacts__place">
+                      Москва, ул.Новый Арбат, д.31/12
+                    </div>      
+                    <a href="tel:+78009039090" class="phone-number phone-number--theme--green">
+                      <svg class="phone-number__icon">
+                        <use xlink:href="./img/sprite.svg#phone"></use>
+                      </svg>
+                      <span class="phone-number__text">8 800 903 90 90</span>
+                    </a>
+                  </address>
+                  <ul class="socials">
+                    <li class="socials__item">
+                      <a class="socials__link" href="#">
+                        <img src="./img/vk.svg" alt="" class="socials__icon" />
+                        </a>
+                      <a class="socials__link" href=""></a>
+                    </li>
+                    <li class="socials__item">
+                      <a class="socials__link" href="#">
+                        <img src="./img/f.svg" alt="" class="socials__icon" />
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                      <a class="socials__link" href="#">
+                        <img src="./img/ig.svg" alt="" class="socials__icon" />
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                      <a class="socials__link" href="#">
+                        <img src="./img/tw.svg" alt="" class="socials__icon" />
+                        </a>
+                    </li>
+                  </ul>
+                </div>
+              </footer>
+            </section>
+
         </div>
     </div>  
       
+
+
     <nav class="fixed-menu">
         <ul class="fixed-menu__list">
-            <li class="fixed-menu__item fixed-menu__item--active"><a href="" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item fixed-menu__item--active"><a href="" data-scroll-to="hero" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="" data-scroll-to="benefits" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="" data-scroll-to="products" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="" data-scroll-to="team" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="" data-scroll-to="products" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="" data-scroll-to="reviews" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="" data-scroll-to="player" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="" data-scroll-to="order" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="" data-scroll-to="contacts" class="fixed-menu__link"></a></li>
         </ul>
     </nav>
+
+    <div id="modal" class="modal">
+      <div class="modal__container">
+        <div class="modal__content">Сообщение отправлено</div>
+        <div class="modal__button-container">
+          <a href="#" class="btn app-submit-btn btn--theme--yellow">Закрыть</a>
+        </div>
+      </div>
+    </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+      <script src="https://www.youtube.com/iframe_api"></script>
+      <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+      <script defer src="./scripts/menu.js"></script>
+      <script defer src="./scripts/tabs.js"></script>
+      <script defer src="./scripts/accordion.js"></script>
+      <script defer src="./scripts/slider.js"></script>
+      <script defer src="./scripts/modal.js"></script>
+      <script defer src="./scripts/menu-accordion.js"></script>
+      <script defer src="./scripts/player.js"></script>
+      <script defer src="./scripts/map.js"></script>
+      <script defer src="./scripts/ops.js"></script>
+
 </body>
 </html>

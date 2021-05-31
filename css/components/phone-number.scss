@@ -1,12 +1,33 @@
 .phone-number {
-    font-size: 24px;
+    font-size: rem(24px);
     text-decoration: none;
     display: flex;
     align-items: center;
+    white-space: nowrap;
+
+    &--theme--green {
+        color: #010101;
+    
+        .phone-number__icon {
+          fill: #010101;
+        }
+      }
+}
+
+.phone-number__icon {
+    margin-right: rem(10px);
+    width: rem(12px);
+    height: rem(12px);
+    fill: #FFFFFF;
+    flex-shrink: 0;
 }
 
 .phone-number__icon-elem {
-    width: 13px;
-    height: 13px;
-    margin-right: 6px;
+    width: rem(13px);
+    height: rem(13px);
+    margin-right: rem(6px);
+}
+
+.phone-number__text {
+    white-space: nowrap;
 }

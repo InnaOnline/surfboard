@@ -1,16 +1,51 @@
 .reviews__display {
     background: #F8FAF9;
-    padding: 40px 140px 40px 117px;
-    margin-bottom: 16px;
+    padding: rem(40px) rem(140px) rem(40px) rem(117px);
+    margin-bottom: rem(16px);
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
+    @include phones {
+        padding: rem(65px) rem(24px) rem(156px) rem(24px);
+        margin-bottom: 0;
+    }
+}
+
+.reviews__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    opacity: 0;
+
+    &.active {
+        position: static;
+        opacity: 1;
+        pointer-events: unset;
+    }
 }
 
 .reviews__display-inner {
     display: flex;
+
+    @include tablets {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;        
+    }
 }
 
 .reviews__avatar {
-    width: 253px;
-    height: 264px;
+    width: rem(253px);
+    height: rem(264px);
+
+    @include tablets {
+    width: rem(130px);
+    height: rem(130px);
+    }
 }
 
 .reviews__avatar-img {
@@ -21,20 +56,31 @@
 
 .reviews__content {
     flex: 1;
-    margin-left: 38px;
-    padding-top: 28px;
+    margin-left: rem(38px);
+    padding-top: rem(28px);
     line-height: 1.2;
+
+    @include phones {
+        line-height: 1.4;
+        margin-right: 0;
+        padding-top: rem(47px);
+    }
 }
 
 .reviews__title {
-    font-size: 27px;
+    font-size: rem(27px);
     font-weight: bold;
-    margin-bottom: 16px;
+    margin-bottom: rem(16px);
     color: #000000;
+
+    @include phones {
+        margin-bottom: rem(14px);
+    };
 }
 
 .reviews__text {
-    margin-bottom: 26px;
+    margin-bottom: rem(26px);
+    font-size: rem(18px);
 }
 
 .reviews__switcher {
@@ -42,7 +88,7 @@
     justify-content: center;
 
     .reviews__switcher-item {
-        margin-right: 6px;
+        margin-right: rem(6px);
         
         &:last-child {
             margin-right: 0;
@@ -51,7 +97,7 @@
 }
 
 .reviews__author {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: rem(18px);
+    font-weight: 500;
     color: black;
 }

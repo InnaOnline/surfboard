@@ -1,6 +1,11 @@
 $containerWidth: 1100px;
 $baseFontSize: 18px;
 
+//breakpoints
+
+$tablets: 768px;
+$phones: 480px;
+
 //colors
 $grey: #a9e9d4;
 $darkGreen: #0b4d3c;
@@ -14,6 +19,7 @@ $z-fixed-menu: 100;
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css');
 
 //setups
+@import "media";
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,700;0,800;1,300;1,400&display=swap');
 @import "layout";
 
@@ -31,9 +37,25 @@ $z-fixed-menu: 100;
 @import "components/headline";
 @import "components/reviews";
 @import "components/reviews-section";
-@import "components/interactive-avatar";
+@import "components/reviews-switcher";
 @import "components/order-section";
 @import "components/form";
 @import "components/radio";
 @import "components/fixed-menu";
-@import "components/address";
+@import "components/menu";
+@import "components/hamburger";
+@import "components/products-section";
+@import "components/products-slider";
+@import "components/products";
+@import "components/product";
+@import "components/parameters";
+@import "components/team";
+@import "components/modal";
+@import "components/products-menu-section";
+@import "components/products-menu";
+@import "components/player-section";
+@import "components/player";
+@import "components/map-section";
+@import "components/footer";
+@import "components/contacts";
+@import "components/socials";

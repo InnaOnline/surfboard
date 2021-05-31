@@ -1,15 +1,23 @@
 .feature {
     display: flex;
+    align-items: center;
 }
 
 .feature__icon {
-    width: 35px;
-    max-width: 35px;
-    margin-right: 15px;
+    width: rem(45px);
+    margin-right: rem(7px);
+  }
+
+.feature__icon-symbol {
+    width: rem(35px);
+    max-width: rem(35px);
+    margin-right: rem(15px);
+    fill: #c6f7ff;
 }
 
 .feature__text {
-    font-size: 16px;
-    min-width: 90px;
+    font-size: rem(16px);
+    min-width: rem(90px);
     font-weight: 700;
+    line-height: 1.3;
 }

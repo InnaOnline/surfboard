@@ -3,6 +3,10 @@
     cursor: pointer;
     user-select: none;
 
+    @include phones {
+        margin-bottom: rem(10px);
+    }
+
 &--checkbox {
     .radio__visible {
         border-radius: 0;
@@ -18,12 +22,12 @@ background: url("../img/tick.png") center center no-repeat;
     /*display: none;*/
     position: absolute;
     clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
+    width: rem(1px);
+    height: rem(1px);
+    margin: rem(-1px);
 
     &:focus ~ .radio__visible {
-        box-shadow: 0 0 6px 3px #ff8b00;                
+        box-shadow: 0 0 rem(6px) rem(3px) #ff8b00;                
     }
 
     &:checked ~ .radio__visible {
@@ -33,16 +37,16 @@ background: url("../img/tick.png") center center no-repeat;
 }
 
 .radio__visible {
-    width: 26px;
-    height: 26px;
+    width: rem(26px);
+    height: rem(26px);
     position: relative;
     border-radius: 50%;
     background: #FFFFFF;
 
     &:before {
         content: "";
-        width: 14px;
-        height: 14px;
+        width: rem(14px);
+        height: rem(14px);
         background: #FEDB3F;
         border-radius: 50%;
         position: absolute;
@@ -54,6 +58,6 @@ background: url("../img/tick.png") center center no-repeat;
 }
 
 .radio__title {
-    margin-left: 6px;
-    margin-right: 20px;
+    margin-left: rem(6px);
+    margin-right: rem(20px);
 }

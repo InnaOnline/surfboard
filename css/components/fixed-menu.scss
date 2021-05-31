@@ -2,11 +2,19 @@
     position: fixed;
     top: 35%;
     right: 4%;
-    z-index: 100;
+    z-index: $z-fixed-menu;
+
+    @include tablets {
+        display: none;
+    }
+
+    &--shadowed {
+        color: #000;
+      }
 }
 
 .fixed-menu__item {
-    margin-bottom: 5px;
+    margin-bottom: rem(5px);
 
     &--active {
         .fixed-menu__link {
@@ -17,18 +25,22 @@
 }
 
 .fixed-menu__link {
-    width: 18px;
-    height: 18px;
+    width: rem(18px);
+    height: rem(18px);
     background-repeat: 50%;
-    border: 1px solid transparent;
+    border: rem(1px) solid transparent;
     display: block;
     position: relative;
+
+    &:hover {
+        border-color: currentColor;
+      }
 
     &:before {
         content: "";
         display: block;
-        width: 7px;
-        height: 7px;
+        width: rem(7px);
+        height: rem(7px);
         border-radius: 50%;
         background: #FFFFFF;
         position: absolute;

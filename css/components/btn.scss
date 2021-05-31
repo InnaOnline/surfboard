@@ -1,9 +1,9 @@
 .btn {
-    font-size: 19px;
+    font-size: rem(19px);
     font-weight: bold;
-    padding: 21px 41px;
+    padding: rem(21px) rem(41px);
     text-transform: uppercase;
-    border-radius: 100px;
+    border-radius: rem(100px);
     line-height: 1;
     text-decoration: none;
     display: inline-block;
@@ -17,16 +17,47 @@
             background: #FFD517;
             color: #000000;
         }
+
+        @include tablets {
+            margin-bottom: rem(14px);
+        }
     }
 
     &--theme--transparent {
         background: transparent;
         color: #FFFFFF;
         text-transform: none;
-        margin-left: -32px;
+        margin-left: rem(-32px);
 
         &:hover {
             color: #FEDB3F;
         }
+
+       @include tablets {
+            margin-left: 0;
+            display: none;            
+        }
     }
+
+    &--theme--white {
+        background: #fff;
+        color: $darkGreen;
+    
+        &:hover {
+          color: #fff;
+          background: $darkGreen;
+        }
+      }
+    
+      &--theme--green {
+        background: $darkGreen;
+        color: #fff;
+    
+        &:hover {
+          color: $darkGreen;
+          background: #fff;
+        }
+      }
+    
+      
 }

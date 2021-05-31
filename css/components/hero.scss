@@ -2,6 +2,29 @@
 background: url("../img/coast.png") center top no-repeat;
 background-size: cover;
 color: #FFFFFF;
+height: 100vh;
+min-height: rem(652px);
+position: relative;
+
+@include tablets {
+    background: url("../img/coast.png") right 24% bottom / cover no-repeat;
+    &:after {
+        content: "";
+        background: rgba(25, 104, 177, 1);
+        height: rem(96px);
+        width: 100%;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        /*z-index: -1;*/
+    }
+}
+
+@include phones {
+    background-position-x: right 30%;
+    background-position-y: bottom;
+}
 }
 
 .hero__container {
@@ -9,25 +32,62 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 height: 100%;
-padding: 22px 80px 60px 80px;
+z-index: 1;
+padding: rem(22px) rem(80px) rem(60px) rem(80px);
+
+@include tablets {
+    padding: 0;
+    margin-left: rem(2px);
+    margin-top: rem(30px);
+}
 }
 
+.hero__icons-section {
+    @include tablets {
+        display: none;
+    }
+}
 
 .hero__title-section {
-width: 46%;
+width: 54%;
+
+    @include tablets {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
 }
 
 .hero__main-title {
-font-size: 48px;
+font-size: rem(48px);
 line-height: 1.2;
 font-weight: bold;
-margin-bottom: 16px;
+margin-bottom: rem(16px);
 text-transform: uppercase;
+
+@include phones {
+    font-size: rem(40px);
+}
 }
 
 .hero__title-desc {
-font-size: 21px;
-margin-bottom: 40px;
+font-size: rem(21px);
+margin-bottom: rem(40px);
 padding-right: 10%;
 line-height: 1.2;
+
+@include phones {
+    padding-right: 5%;
+    font-size: rem(18px);
+}
+}
+
+.logo {
+    @include tablets {
+        flex-shrink: 0;
+    }
 }

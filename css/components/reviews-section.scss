@@ -1,3 +1,15 @@
 .reviews-section {
     background: #FFFFFF;
+    
+    @include phones {
+        background: none;
+    
+        &::before {
+          display: none;
+        }
+    
+        &::after {
+          display: none;
+        }
+      }
 }
