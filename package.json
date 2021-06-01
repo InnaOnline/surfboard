@@ -17,7 +17,7 @@
     "url": "https://github.com/InnaOnline/surfboard/issues"
   },
   "homepage": "https://github.com/InnaOnline/surfboard#readme",
-  "dependencies": {
+  "devDependencies": {
     "gulp": "^4.0.2"
   }
 }
