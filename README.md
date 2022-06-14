@@ -1,3 +1,5 @@
 # surfboard
-Выпускной проект Курса "Веб для начинающих" от Loftschool. 
-Обучение профессии Frontend-разработчик
+
+Проект Frontend (Html, Css, Javascript)
+
+[Demo](https://innaonline.github.io/surfboard)
