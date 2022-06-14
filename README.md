@@ -1,5 +1,5 @@
 # surfboard
 
-Проект Frontend (Html, Css, Javascript)
+Проект Frontend (Html, Css, Scss, Javascript)
 
 [Demo](https://innaonline.github.io/surfboard)
